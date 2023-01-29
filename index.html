@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header class='body_header' id="show_menu">
+      <div>
+        <img class="site_logo" src="images/logo.svg" alt="snap logo">
+      </div>
+      <nav class="nav_menu" id="link_box">
+        <div class="dsktp_dropdown">
+          <button class="icon_up1" id="nav_feature_links">Features</button>
+          <ul class="nav_feature_links">
+            <li><a class="link_todo" href="#">Todo List</a></li>
+            <li><a class="link_calender" href="#">Calendar</a></li>
+            <li><a class="link_reminder" href="#">Reminders</a></li>
+            <li><a class="link_planning" href="#">Planning</a></li>
+          </ul>
+        </div>
+        <div class="dsktp_dropdown">
+          <button class="icon_up2" id="nav_company_links">
+           Company
+          </button>
+          <ul class="nav_company_links">
+            <li><a href="#">History</a></li>
+            <li><a href="#">Our Team</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <ul class='inquiry_links'>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+        <section class="relog_links">
+          <a href="#">Login</a>
+          <a href="#">Register</a>
+        </section>
+        <button class="nav_close" id="nav_close"><span class="visually-hidden">close button</span><img src="images/icon-close-menu.svg" alt="closing menu button"></button>
+      </nav>
+      <button class="toggle_menu" id="nav_toggle"><span class="visually-hidden">toggle menu</span>
+      <img src="images/icon-menu.svg" alt="icon for toggle button"></button>
+    </header>
+    <main>
+      <article class="grid">
+        <header class="article_header">
+          <picture>
+            <source srcset="images\image-hero-desktop.png" media="(min-width:1000px)">
+            <source srcset="images\image-hero-mobile.png" media="(max-width:1000px)">
+            <img src="images/image-hero-mobile.png" alt="picture of a boy who is working on laptop">
+          </picture>
+          
+        </header>
+        <section class="article_section">
+          <div>
+            <h1>Make <span>remote work</span></h1>
+            <p>
+              Get your team in sync, no matter your location. Streamline processes,
+              create team rituals, and watch productivity soar.
+            </p>
+            <a href="#">Learn more</a>
+          </div>
+          <section class="related_logos">
+            <img src="images/client-databiz.svg" alt="logo of client-databiz">
+            <img src="images/client-audiophile.svg" alt="logo of client-audiophile">
+            <img src="images/client-meet.svg" alt="logo of client-meet">
+            <img src="images/client-maker.svg" alt="logo of client-maker">
+          </section>
+        </section>
+    
+      </article>
+    </main>
+    
+  </div>
+
+  
+
+
+
+  
+  
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  <script src="index.js"></script>
+</body>
+</html>

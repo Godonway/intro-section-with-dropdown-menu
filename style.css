@@ -1,0 +1,379 @@
+*,*::before,*::after{
+  box-sizing: border-box;
+  padding:0;
+  margin:0;
+
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
+
+
+/* # Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Neutral
+
+- Almost White: hsl(0, 0%, 98%)
+- Medium Gray: hsl(0, 0%, 41%)
+- Almost Black: hsl(0, 0%, 8%)
+
+## Typography
+
+### Body Copy
+
+- Font size (paragraph): 18px
+
+### Font
+
+- Family: [Epilogue](https://fonts.google.com/specimen/Epilogue)
+- Weights: 500, 700 */
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+  /* font-family: 'Epilogue', sans-serif; */
+
+  :root{
+  --White: hsl(0, 0%, 98%);
+  --Medium-Gray: hsl(0, 0%, 41%);
+  --Black: hsl(0, 0%, 8%);
+
+  /* font weights */
+
+  --font-500:500;
+  --font-700:700;
+  }
+
+  body{
+    font-family: 'Epilogue', sans-serif;
+    background-color:var(--White);
+   
+  }
+  img{
+    max-width:100%;
+    display: block;
+  }
+
+  p{
+    font-size:18px;
+  }
+  a{
+    text-decoration:none;
+    color:var(--Black);
+  }
+
+  ul{
+    list-style:none;
+  }
+  button{
+    border:none;
+    background-color:transparent;
+    cursor:pointer;
+    font-size:1rem;
+  }
+
+  .nav_feature_links li a,
+  button.icon_up1,
+  button.icon_up2{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+        }
+    .nav_feature_links li a::before,button.icon_up1::after,
+    button.icon_up2::after{
+     content:'';
+     display:block;
+     width:15px;
+     height:16px;
+     background-size:100%;
+     background-repeat:no-repeat;
+       }
+
+  .body_header{
+    position:relative;
+    display:flex;
+    justify-content:space-between;
+    padding:2rem;
+  }
+  @media(max-width:1000px){
+  nav{
+    width:60%;
+    position:fixed;
+    top:0;
+    right:-999px;
+    bottom:0;
+    padding:6rem 2rem;
+    transition:right 200ms ease-in-out; 
+    background-color:white;
+  }
+  button.nav_close{
+    display:block;
+  }
+  
+}
+  .nav_menu > * + *,
+  .nav_menu .inquiry_links > * + *{
+   margin-top:2rem;
+  }
+
+  button.icon_up1,
+  button.icon_up2,
+  .nav_menu a{
+    padding-block:0.5rem;
+    padding-inline:0 1rem;
+  }
+
+  button.icon_up1::after,
+  button.icon_up2::after{
+   height:10px;
+   background-image:url(images/icon-arrow-down.svg);
+     }
+  .nav_feature_links,
+  .nav_company_links{
+    display:none;
+    flex-direction:column;
+    margin-block:2rem;
+    padding-inline:2rem;
+  }
+  .nav_company_links{
+    gap:1rem;
+  }
+  
+
+  .link_todo::before{
+    background-image:url(images/icon-todo.svg);
+  }
+  .link_calender::before{
+    background-image:url(images/icon-calendar.svg);
+  }
+  .link_reminder::before{
+    background-image:url(images/icon-reminders.svg);
+  }
+  .link_planning::before{
+    background-image:url(images/icon-planning.svg)
+  }
+  .nav_close{
+    display:none;
+    position:absolute;
+    top:0px;
+    right:30px;
+      }
+  
+   
+/* ##### toggling the button links and menu### */
+
+.link_box1 .nav_feature_links,
+.link_box2 .nav_company_links{
+  display:flex;
+}
+.link_box1 button.icon_up1::after,
+.link_box2 button.icon_up2::after
+{
+  transform:scale(-1);
+}
+
+.show_menu{
+ right:0;
+}
+
+
+.relog_links{
+  display:grid;
+  gap:0.5em;
+  text-align:center;
+  
+}
+
+.relog_links a + a{
+  border:1px solid;
+  border-radius:0.8rem;
+}
+
+@media(min-width:1000px){
+  .toggle_menu{
+    display:none;
+  }
+  .body_header{
+    align-items:center;
+    justify-content:start;
+    }
+  .nav_menu{
+    margin-left:5rem;
+    margin-bottom:8px;
+    flex:1;
+    gap:2rem;
+  }
+  .inquiry_links li + li{
+   margin-left:2rem;
+  }
+  .relog_links{
+    margin-left:auto;
+  }
+  .relog_links a{
+    padding-inline:1.5rem;
+  }
+  .nav_menu,
+  .inquiry_links,
+  .relog_links{
+    display:flex;
+    align-items:center;
+  }
+  .nav_menu > * + *,
+  .nav_menu .inquiry_links > * + *{
+   margin-top:0;
+  }
+  .dsktp_dropdown{
+    position:relative;
+  }
+
+  .nav_feature_links,
+  .nav_company_links{
+    position:absolute;
+    top:20px;
+    padding-block:2rem;
+    background-color:white;
+    border-radius:1rem;
+    box-shadow: 0px 2px 20px -7px rgba(42,39,39,0.75);
+  }
+  
+  .nav_feature_links{
+    left:-100px;
+  }
+  .nav_company_links{
+    width:160px;
+  }
+
+  /* header font colors */
+
+  .nav_menu a,
+  .nav_menu button{
+   color:var(--Medium-Gray);
+  }
+  /* hover states */
+  .nav_menu a:hover,
+  .nav_menu button:hover{
+    color:var(--Black);
+   font-weight:var(--font-700);
+  }
+
+}
+
+
+article>section{
+  display:grid;
+  gap:4rem;
+  padding:2rem;
+  text-align:center;
+}
+article section h1{
+  font-size:2rem;
+  margin-block:2rem;
+}
+article section a{
+  display:inline-block;
+  margin-top:2rem;
+  padding:1rem 2rem;
+  color:var(--White);
+  background-color:var(--Black);
+  border-radius:0.8rem;
+}
+
+article section a:hover{
+  background-color:transparent;
+  color:var(--Black);
+  font-weight:var(--font-700);
+  border:1px solid var(--Black);
+}
+
+article section .related_logos{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+ }
+article section .related_logos img{
+  width:calc(2.5vw + 3.5rem);
+  }
+
+@media(min-width:750px){
+  .wrapper{
+    width:90%;
+    margin:auto;
+  }
+  .article_header img{
+    margin:auto;
+  }
+
+  article section .related_logos img:nth-child(2){
+    width:calc(1vw + 3.5rem);
+    }
+  
+}
+
+@media(min-width:1000px){
+  .wrapper{
+    width:100%;
+      }
+  .grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:2rem;
+     }
+  article{
+    width:75%;
+    margin:auto;
+    
+  }
+  .article_header{
+    grid-column:2/-1;
+     }
+  .article_section{
+    grid-row:1/-1;
+    grid-column:1/2;
+  }
+
+  .article_header img{
+    height:550px;
+    margin:0;
+    margin-left:auto;
+  }
+  article>section{
+    grid-template-rows:1fr 50px;
+    text-align:left;
+    padding:0;
+  }
+  article>section div{
+    align-self:end;
+      }
+  article>section div + section{
+    align-self:end;
+  }
+  
+  article>section h1{
+    font-size:5rem;
+    line-height:1;
+  }
+  article>section h1 span{
+    display:block;
+  }
+  article>section p{
+    padding-inline:0 10rem;
+    color:var(--Medium-Gray)
+  }
+
+  }
